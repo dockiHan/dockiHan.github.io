@@ -10,7 +10,7 @@ keywords:
 author: docki
 language: zh-Hans
 timezone: Asia/Shanghai
-avatar: /images/logo.jpg # 站点logo
+avatar: /images/logo.jpeg # 站点logo
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
