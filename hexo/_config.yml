@@ -8,7 +8,7 @@ subtitle: 非淡泊无以明志，非宁静无以致远
 description: 走在求知的路上
 keywords:
 author: docki
-language: zh-Hans
+language: zh-CN
 timezone: Asia/Shanghai
 
 # URL
@@ -88,5 +88,6 @@ path: search.xml
 field: post
 format: html
 limit: 10000
+
 
 
