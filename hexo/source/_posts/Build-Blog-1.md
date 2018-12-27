@@ -9,27 +9,29 @@ categories: [Hexo]
 
 
 ---
-##<center>前言</center>
+## 前言
+
 谨以此文记录本人的博客建站历程，期间参考了众多前辈的建站经验，在后续正文中会做相关的引用说明。
 
 作为一枚拖延症与懒惰症的晚期患者，最近突发奇想，想要写点东西来记录自己的学习点滴，于是乎开始了个人博客的踩坑之路......
 
 本教程所涉及的各种工具及相应的版本说明
-**Requirements：
-操作系统： MacOS
-Git: git version 2.15.2 (Apple Git-101.1)
-NodeJs: 10.4.1
-Npm: 6.5.0
-Hexo: 3.8.0
+
+**Requirements：<br/>
+操作系统： MacOS <br/>
+Git: git version 2.15.2 (Apple Git-101.1) <br/>
+NodeJs: 10.4.1 <br/>
+Npm: 6.5.0 <br/>
+Hexo: 3.8.0 <br/>
 Next: v6.6.0  (直接git pull最新版)**
 
 ---
-##<center>起航</center>
+## 起航
 * 首先去GitHub新建一个代码仓库，名称必须是userName(gitHub用户名).github.io
 ![图-1][1]
 
 
-  注意勾选**Initialize this repository with a README**
+  注意勾选 **Initialize this repository with a README**
 * 进入刚刚新建的代码库，新建一个远程分支（假设新分支名称为build）用于存储建站所需的内容。
 （由于GitHub Pages只能自动识别master分支，因此代码库的master分支只能用来存放博客部署的相关内容而不能存放其他内容，如果master分支放了额外内容则GitHub Pages会在生成页面时报错，导致个人主页404。我在这里被坑了好多次才顺利通过）
 * 配置 GitHub SSL
@@ -127,7 +129,7 @@ hexo d -g   //d 为deploy的缩写，g为generate的缩写，表示生成静态�
 
 
 ---
-##<center>进阶</center>
+## 进阶 
 目前肯定会有很多小伙伴不满足于现状，想要自己的博客站点变得更酷一些、更炫一点，最简单的方法就是去找一些前端大神实现好的主题，然后在此基础上做一些个性化的定制，这里就以人气值最高的Next主题为例......
 
 * 下载 Next 主题
