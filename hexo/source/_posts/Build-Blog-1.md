@@ -28,6 +28,7 @@ Next: v6.6.0  (直接git pull最新版)**
 ---
 ## 起航
 * 首先去GitHub新建一个代码仓库，名称必须是userName(gitHub用户名).github.io
+
 ![图-1][1]
 
 
@@ -39,6 +40,7 @@ Next: v6.6.0  (直接git pull最新版)**
  * 连按三次回车键直至生成密钥
  * SSH KEY 生成之后会默认保存在 ~/.ssh 目录中，打开这个目录，cat 一下 id_rsa.pub 文件，复制全部内容，即复制密钥。
  * 打开 GitHub，依次点击 头像 --> Settings --> SSH and GPG keys --> Add SSH key，将复制的密钥粘贴到 key 输入框，最后点击 Add Key ，SSH KEY 配置成功，如下图所示：
+
 ![图-5][2]
 
 * 在本地执行 git pull 拉下代码库：
@@ -49,6 +51,7 @@ Next: v6.6.0  (直接git pull最新版)**
  * 为本地的build分支设置上游分支，设置为远程的build分支
  `git branch --set-upstream-to origin build`
 * 在 GitHub 中进入代码库，在Settings中找到 GitHub Pages 将 Source 设置为 master 分支（如图）。然后在下面选择一个主题（可选操作，对后续影响不大）。
+
 ![图-2][3]
 
 ![图-4][4]
@@ -57,7 +60,9 @@ Next: v6.6.0  (直接git pull最新版)**
 如果远程仓库有了改变，在本地的仓库执行 `git pull` 拉取最新的内容
 如果本地仓库有了改变， 依次执行 `git add <your file name> ` `git commit -m "<your commit message>" ` 和 `git push `
 同时注意当前的本地分支，在本地 git 仓库会都有所标注（如图所示，当前操作的分支即是本地的build分支）
+
 ![图-3][5]
+
 切换当前分支可使用命令`git checkout <branch name>`
 其他有关Git的操作这里就不再赘述，可以自行 Google 或者百度
 * 安装 Hexo 以及相关依赖
@@ -65,6 +70,7 @@ Next: v6.6.0  (直接git pull最新版)**
  * 安装 Hexo `npm install -g hexo-cli` 如果 npm 执行较慢可先更换一下镜像。 使用临时源（阿里源）`npm --registry https://registry.npm.taobao.org install -g hexo-cli` 其他 npm 镜像相关操作可参见https://www.jianshu.com/p/f311a3a155ff
  * 在 build 分支下初始化hexo `hexo init hexo`
  * 进入hexo目录，安装相关依赖
+
 ```bash
  cd hexo
  npm install
@@ -76,6 +82,7 @@ Next: v6.6.0  (直接git pull最新版)**
 * 浏览器访问 **lcalhost:4000** 即可看到初始化的博客页面了（按 Ctrl + C 可停止 hexo 本地服务器）
 * 配置 hexo 配置文件
 进入 hexo 目录，打开 _config.yml 配置文件做如下配置
+
 ```yaml
 # Hexo Configuration
 ## Docs: https://hexo.io/docs/configuration.html
@@ -105,6 +112,7 @@ code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
 ```
+
 ```yaml
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
@@ -118,10 +126,12 @@ deploy:
 `npm install hexo-deployer-git`
 （安装速度慢可更换npm镜像，--见前文）
 * 执行下面的代码命令，将 hexo 项目托管到 GitHub 上，Hexo 会通过上面配置文件中的 # Deployment 相关配置进行部署。
+
 ```
 hexo clean  //清空当前缓存
 hexo d -g   //d 为deploy的缩写，g为generate的缩写，表示生成静态页面并部署
 ```
+
 * 至此一个简单的个人博客站点就搭建完成了，浏览器访问**https://userName.github.io**就可以看到已经部署的页面了
 * 特别鸣谢各位探路前辈：
  * [传送门1][7]
@@ -137,12 +147,14 @@ hexo d -g   //d 为deploy的缩写，g为generate的缩写，表示生成静态�
 这里推荐使用 git 方式安装，后续更新非常方便
 * 修改全局配置文件（ hexo 目录下的 _config.yml ）
 将 Extension 片段的 Theme 改为 next 如下
+
 ```yaml
  # Extensions
  ## Plugins: https://hexo.io/plugins/
  ## Themes: https://hexo.io/themes/
  theme: next
 ```
+
 * 修改 Next 主题的配置文件（ themes/next/ 目录下的 _config.yml ）
 
 
