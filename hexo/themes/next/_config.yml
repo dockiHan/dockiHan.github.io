@@ -673,13 +673,13 @@ rating:
 # Show number of visitors to each article.
 # You can visit https://leancloud.cn get AppID and AppKey.
 leancloud_visitors:
-  enable: false
-  app_id: #<app_id>
-  app_key: #<app_key>
+  enable: true
+  app_id: 2c4O5L2cbNv8MxSauWi6M2Tf-gzGzoHsz  #<app_id>
+  app_key: onlFi1K3BGb2tsMtymXtO314  #<app_key>
   # Dependencies: https://github.com/theme-next/hexo-leancloud-counter-security
   # If you don't care about security in lc counter and just want to use it directly
   # (without hexo-leancloud-counter-security plugin), set the `security` to `false`.
-  security: true
+  security: false
   betterPerformance: false
 
 # Another tool to show number of visitors to each article.
@@ -695,7 +695,7 @@ firestore:
 # Show Views/Visitors of the website/page with busuanzi.
 # Get more information on http://ibruce.info/2015/04/04/busuanzi
 busuanzi_count:
-  enable: true
+  enable: false
   total_visitors: true
   total_visitors_icon: user
   total_views: true
@@ -858,8 +858,8 @@ pace_theme: pace-theme-minimal
 canvas_nest:
   enable: true
   onmobile: true # display on mobile or not
-  color: '0,0,255' # RGB values, use ',' to separate
-  opacity: 0.5 # the opacity of line: 0~1
+  color: '0,0,0' # RGB values, use ',' to separate
+  opacity: 0.65 # the opacity of line: 0~1
   zIndex: -1 # z-index property of the background
   count: 99 # the number of lines
 

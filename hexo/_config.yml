@@ -89,5 +89,13 @@ field: post
 format: html
 limit: 10000
 
+# leancloud_counter_security
+leancloud_counter_security:
+  enable_sync: true
+  app_id: 2c4O5L2cbNv8MxSauWi6M2Tf-gzGzoHsz
+  app_key: onlFi1K3BGb2tsMtymXtO314
+  username: docki # Will be asked while deploying if is left blank
+  password: Hzd19930831 # Recommmended to be left blank. Will be asked while deploying if is left blank
+
 
 
