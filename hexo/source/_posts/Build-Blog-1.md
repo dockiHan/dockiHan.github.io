@@ -52,6 +52,8 @@ Next: v6.6.0  (直接git pull最新版)**
  `git branch --set-upstream-to origin build`
 * 在 GitHub 中进入代码库，在Settings中找到 GitHub Pages 将 Source 设置为 master 分支（如图）。然后在下面选择一个主题（可选操作，对后续影响不大）。
 
+<!-- more -->
+
 ![图-2][3]
 
 ![图-4][4]
@@ -117,10 +119,10 @@ skip_render:
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-    type: git
-    repository: https://github.com/yourName/yourName.github.io.git
-    branch: master
-    message: hexo depoly
+  type: git
+  repository: https://github.com/yourName/yourName.github.io.git
+  branch: master
+  message: hexo depoly
 ```
 * 执行下面的命令，安装 hexo-deployer-git 插件，快速把代码托管到 GitHub 上
 `npm install hexo-deployer-git`
@@ -157,6 +159,197 @@ hexo d -g   //d 为deploy的缩写，g为generate的缩写，表示生成静态�
 
 * 修改 Next 主题的配置文件（ themes/next/ 目录下的 _config.yml ）
 
+* 配置页脚部分 
+
+```yaml
+footer:
+  # Specify the date when the site was setup.
+  # If not defined, current year will be used.
+  since: 2018
+  
+  # Icon between year and copyright info.
+  icon:
+  # Icon name in fontawesome, see: https://fontawesome.com/v4.7.0/icons
+  # `heart` is recommended with animation in red (#ff0000).
+    name: heart
+    # If you want to animate the icon, set it to true.
+    animated: false
+    # Change the color of icon, using Hex Code.
+    color: "#808080"
+
+  # If not defined, will be used `author` from Hexo main config.
+  copyright: docki
+  # -------------------------------------------------------------
+  powered:
+    # Hexo link (Powered by Hexo).
+    enable: false
+    # Version info of Hexo after Hexo link (vX.X.X).
+    version: true
+```
+
+* 配置浏览器导航栏上面的网页图标。其中的/images路径为：next目录下的/source/images
+
+```yaml
+favicon:
+  small: /images/font_logo.png
+  medium: /images/font_logo.png
+  apple_touch_icon: /images/font_logo.png
+  safari_pinned_tab: /images/logo.svg
+```
+* 配置菜单栏
+
+```yaml
+# ---------------------------------------------------------------
+# Menu Settings
+# ---------------------------------------------------------------
+ 
+# When running the site in a subdirectory (e.g. domain.tld/blog), remove the leading slash from link value (/archives -> archives).
+# Usage: `Key: /link/ || icon`
+# Key is the name of menu item. If translate for this menu will find in languages - this translate will be loaded; if not - Key name will be used. Key is c#
+# Value before `||` delimeter is the target link.
+# Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, question icon will be loaded.
+# External url should start with http:// or https:// .
+menu:
+  home: / || home
+  categories: /categories/ || th
+  tags: /tags/ || tags
+  archives: /archives/ || archive
+  about: /about/ || user
+  #schedule: /schedule/ || calendar
+  #sitemap: /sitemap.xml || sitemap
+  #commonweal: /404/ || heartbeat
+
+# Enable/Disable menu icons / item badges.
+menu_settings:
+  icons: true
+  badges: false
+```
+
+填写完配置文件后还需使用 hexo new page 新建菜单选项对应的页面，否则点击菜单按钮时会报 404 错误。。。
+
+```bash
+hexo new page 'categories'
+hexo new page 'tags'
+hexo new page 'about'
+```
+
+此时 source 目录下会新建有三个目录 categories， tags， about 如下图：
+
+![图-6][10]
+
+在每个目录下都会生成有一个 index.md 文件，之后我们需要给每个 index.md 文件添加一个 type 字段，然后填写对应的类型。如下图所示：
+
+![图-7][11]
+
+tags 和 about 对应的 index.md 与上图修改方式相同。
+
+* 选择Pisces样式
+
+```yaml
+# ---------------------------------------------------------------
+# Scheme Settings
+# ---------------------------------------------------------------
+
+# Schemes
+#scheme: Muse
+#scheme: Mist
+scheme: Pisces
+#scheme: Gemini
+```
+
+* 配置左侧导航栏中的头像(此处/images路径同样是next目录下/source/images，自备图像并放到这个路径下)
+
+```yaml
+# Sidebar Avatar
+avatar:
+  # in theme directory(source/images): /images/avatar.gif
+  # in site  directory(source/uploads): /uploads/avatar.gif
+  # You can also use other linking images.
+  url: /images/font_logo.png
+  # If true, the avatar would be dispalyed in circle.
+  rounded: true
+  # The value of opacity should be choose from 0 to 1 to set the opacity of the avatar.
+  opacity: 0.8
+  # If true, the avatar would be rotated with the cursor.
+  rotated: false
+```
+
+* 安装搜索插件
+
+在 hexo 目录下执行
+
+```bash
+npm install hexo-generator-searchdb
+```
+打开 hexo 目录下的全局配置文件 _config.yml 在最下方添加如下配置：
+
+```yaml
+# Search Bar
+path: search.xml
+field: post
+format: html
+limit: 10000
+```
+
+打开 next 目录下的主题配置文件，找到 local_search 属性，开启本地搜索功能：
+
+```yaml
+# Local search
+# Dependencies: https://github.com/theme-next/hexo-generator-searchdb
+local_search:
+  enable: true
+  # if auto, trigger search by changing input
+  # if manual, trigger search by pressing enter key or search button
+  trigger: auto
+  # show top n results per article, show all results by setting to -1
+  top_n_per_article: 1
+  # unescape html strings to the readable one
+  unescape: false
+```
+
+* 发布文章
+
+在 hexo 目录下执行 `hexo new "Hello Hexo"` 将会创建一篇名为 Hello Hexo 的文章，文章会存储在 hexo/source/_posts/ 目录下。进入该目录打开 Hello-Hexo.md 文件，为其添加标签和分类
+```yaml
+---
+title: Hello Hexo
+date: 2018-12-27 11:57:40
+tags: [Hexo]
+categories: [Hexo]
+---
+```
+然后可以随意写一些内容（需要使用MarkDown语法），之后可以先启动本地的 hexo 服务器，查看最新的修改内容是否成功显示。执行 `hexo server` 然后用浏览器访问 http://localhost:4000 <br>
+
+可以在文章的任意部位添加下面的代码，发布后就会变成“阅读全文”按钮
+```
+<!--more-->
+```
+
+* 部署最新的修改内容
+
+在 hexo 目录下依次执行：
+
+```bash
+hexo clean
+hexo d -g
+```
+
+然后浏览器访问**https://userName.github.io** 查看你的最新修改吧！
+
+* 将最新配置同步到 git 远程代码仓库
+
+注意此时需要保持在 build 分支，先执行`git status` 查看本地分支与远程分支的差异（比如更改了哪些、新加了哪些、删除了哪些等等）然后执行以下命令提交最新修改的文件：
+
+```bash
+git add <your modified filenames>   //执行多次git add 直到把所有改变都add完
+git status  //查看是否已经处理完所有分歧
+git commit -m "<your commit message>"   //提交commit请求
+git push    //将commit同步到远程仓库
+```
+
+---
+
+到此为止，一个看得过去的博客站点就算初步建立了，基本可以满足喜欢写写东西记录生活、写写笔记记录学习经历的同学了。。如果还想做一些个性化的修改可以期待下一篇文章使用**GitHub Pages 与 Hexo 搭建个人博客站点（二）**
 
   [1]: https://raw.githubusercontent.com/dockiHan/dockiHan.github.io/build/hexo/source/post_images/Build-Blog-1/pic_1.png
   [2]: https://raw.githubusercontent.com/dockiHan/dockiHan.github.io/build/hexo/source/post_images/Build-Blog-1/pic_5.png
@@ -167,3 +360,5 @@ hexo d -g   //d 为deploy的缩写，g为generate的缩写，表示生成静态�
   [7]: https://mp.weixin.qq.com/s?__biz=MzU5MTE0ODcwNQ==&mid=2247484100&idx=1&sn=5051ed4c889747259fa00765a1286f62&chksm=fe32210ac945a81c2ce6e8dbaefebc1f44fbde6de3642fe1d61e2e61d292ffa32277dae5528d#rd
   [8]: https://zhuanlan.zhihu.com/p/35668237
   [9]: https://github.com/iissnan/hexo-theme-next
+  [10]: https://raw.githubusercontent.com/dockiHan/dockiHan.github.io/build/hexo/source/post_images/Build-Blog-1/pic_6.png
+  [11]: https://raw.githubusercontent.com/dockiHan/dockiHan.github.io/build/hexo/source/post_images/Build-Blog-1/pic_7.png
