@@ -6,6 +6,7 @@ categories: [Hexo]
 ---
 # 使用GitHub Pages 与 Hexo 搭建个人博客站点（二）
 
+---
 
 ## 前言
 
@@ -16,7 +17,6 @@ categories: [Hexo]
 ### 开启版权声明
 
 在 next 主题目录的配置文件中修改如下部分:
-
 ```yaml
 # Creative Commons 4.0 International License.
 # https://creativecommons.org/share-your-work/licensing-types-examples
@@ -28,6 +28,8 @@ creative_commons:
 ```
 
 修改后的效果如下：
+
+<!-- more -->
 
 ![图-1][2]
 
@@ -58,7 +60,6 @@ gitalk:
 
 * 第四步，修改 **layout/_partials/comments.swig**
 添加以下内容
-
 ```js
 {% elseif theme.gitalk.enable %}
       <div id="gitalk-container"></div>
@@ -67,7 +68,6 @@ gitalk:
 
 * 第五步，在 **layout/_third-party/comments/**目录下增加文件**gitalk.swig** 已存在的不必再新建，检查一下文件内容是否一致
 添加以下的内容
-
 ```js
 {% if not (theme.duoshuo and theme.duoshuo.shortname) and not theme.duoshuo_shortname %}
   {% if theme.gitalk.enable %}
@@ -94,7 +94,6 @@ gitalk:
 
 * 第六步，打开 **layout/_third-party/comments/index.swig**
 添加以下内容
-
 ```js
 {% include 'gitalk.swig' %}
 ```
@@ -122,7 +121,6 @@ hexo d -g
 ![图-5][8]
 
 然后打开 next 目录下的 _config.yml 文件，找到 leancloud_visitors 属性做如下配置：
-
 ```yaml
 leancloud_visitors:
   enable: true
