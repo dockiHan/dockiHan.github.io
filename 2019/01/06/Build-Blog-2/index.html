@@ -1,0 +1,1483 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="//cdn.jsdelivr.net/npm/fancybox@3.0.0/dist/css/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.6.0" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/font_logo.png?v=6.6.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/font_logo.png?v=6.6.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/font_logo.png?v=6.6.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.6.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '6.6.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="使用GitHub Pages 与 Hexo 搭建个人博客站点（二） 前言前一篇文章使用GitHub Pages 与 Hexo 搭建个人博客站点（一）介绍了如何使用 Hexo 从零开始搭建自己的博客站点，目前搭建起来的博客站点已经基本满足大部分同学的需要了，像是一些对外观要求极高的同学或许还是不满足于现状，想要定制更多的功能。本篇文章将继续介绍对 Next 主题的各种魔改。  开启版权声明在 nex">
+<meta name="keywords" content="Hexo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用GitHub Pages 与 Hexo 搭建个人博客站点（二）">
+<meta property="og:url" content="https://dockiHan.github.io/2019/01/06/Build-Blog-2/index.html">
+<meta property="og:site_name" content="Docki&#39;s Home">
+<meta property="og:description" content="使用GitHub Pages 与 Hexo 搭建个人博客站点（二） 前言前一篇文章使用GitHub Pages 与 Hexo 搭建个人博客站点（一）介绍了如何使用 Hexo 从零开始搭建自己的博客站点，目前搭建起来的博客站点已经基本满足大部分同学的需要了，像是一些对外观要求极高的同学或许还是不满足于现状，想要定制更多的功能。本篇文章将继续介绍对 Next 主题的各种魔改。  开启版权声明在 nex">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/dockiHan/dockiHan.github.io/build/hexo/source/post_images/Build-Blog-2/pic_1.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dockiHan/dockiHan.github.io/build/hexo/source/post_images/Build-Blog-2/pic_2.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dockiHan/dockiHan.github.io/build/hexo/source/post_images/Build-Blog-2/pic_3.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dockiHan/dockiHan.github.io/build/hexo/source/post_images/Build-Blog-2/pic_4.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dockiHan/dockiHan.github.io/build/hexo/source/post_images/Build-Blog-2/pic_5.png">
+<meta property="og:updated_time" content="2020-07-11T09:23:30.097Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="使用GitHub Pages 与 Hexo 搭建个人博客站点（二）">
+<meta name="twitter:description" content="使用GitHub Pages 与 Hexo 搭建个人博客站点（二） 前言前一篇文章使用GitHub Pages 与 Hexo 搭建个人博客站点（一）介绍了如何使用 Hexo 从零开始搭建自己的博客站点，目前搭建起来的博客站点已经基本满足大部分同学的需要了，像是一些对外观要求极高的同学或许还是不满足于现状，想要定制更多的功能。本篇文章将继续介绍对 Next 主题的各种魔改。  开启版权声明在 nex">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/dockiHan/dockiHan.github.io/build/hexo/source/post_images/Build-Blog-2/pic_1.png">
+
+
+
+
+
+
+  <link rel="canonical" href="https://dockiHan.github.io/2019/01/06/Build-Blog-2/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>使用GitHub Pages 与 Hexo 搭建个人博客站点（二） | Docki's Home</title>
+  
+
+
+
+
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?4475649a29314cd0487b08b304e8d3c5";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion .logo-line-before i { left: initial; }
+    .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Docki's Home</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">非淡泊无以明志，非宁静无以致远</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://dockiHan.github.io/2019/01/06/Build-Blog-2/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="docki">
+      <meta itemprop="description" content="走在求知的路上">
+      <meta itemprop="image" content="/images/font_logo.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Docki's Home">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">使用GitHub Pages 与 Hexo 搭建个人博客站点（二）
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-01-06 11:26:41" itemprop="dateCreated datePublished" datetime="2019-01-06T11:26:41+08:00">2019-01-06</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2020-07-11 17:23:30" itemprop="dateModified" datetime="2020-07-11T17:23:30+08:00">2020-07-11</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2019/01/06/Build-Blog-2/" class="leancloud_visitors" data-flag-title="使用GitHub Pages 与 Hexo 搭建个人博客站点（二）">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="使用GitHub-Pages-与-Hexo-搭建个人博客站点（二）"><a href="#使用GitHub-Pages-与-Hexo-搭建个人博客站点（二）" class="headerlink" title="使用GitHub Pages 与 Hexo 搭建个人博客站点（二）"></a>使用GitHub Pages 与 Hexo 搭建个人博客站点（二）</h1><hr>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>前一篇文章<a href="https://www.zybuluo.com/mdeditor#1377137-full-reader" target="_blank" rel="noopener">使用GitHub Pages 与 Hexo 搭建个人博客站点（一）</a>介绍了如何使用 Hexo 从零开始搭建自己的博客站点，目前搭建起来的博客站点已经基本满足大部分同学的需要了，像是一些对外观要求极高的同学或许还是不满足于现状，想要定制更多的功能。本篇文章将继续介绍对 Next 主题的各种魔改。</p>
+<hr>
+<h3 id="开启版权声明"><a href="#开启版权声明" class="headerlink" title="开启版权声明"></a>开启版权声明</h3><p>在 next 主题目录的配置文件中修改如下部分:<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Creative Commons 4.0 International License.</span></span><br><span class="line"><span class="comment"># https://creativecommons.org/share-your-work/licensing-types-examples</span></span><br><span class="line"><span class="comment"># Available: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | zero</span></span><br><span class="line"><span class="attr">creative_commons:</span></span><br><span class="line"><span class="attr">  license:</span> <span class="string">by-nc-sa</span></span><br><span class="line"><span class="attr">  sidebar:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">  post:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure></p>
+<p>修改后的效果如下：</p>
+<a id="more"></a>
+<p><img src="https://raw.githubusercontent.com/dockiHan/dockiHan.github.io/build/hexo/source/post_images/Build-Blog-2/pic_1.png" alt="图-1"></p>
+<h3 id="使用-GitTalk-实现评论功能"><a href="#使用-GitTalk-实现评论功能" class="headerlink" title="使用 GitTalk 实现评论功能"></a>使用 GitTalk 实现评论功能</h3><p>GitTalk 评论功能的基本原理是在 GitHub 上以开发者身份创建一个 GitHub Application 之后配置 Next，然后每新建一篇文章都会在 GitHub 代码库的 Issue 中新建一条 issue 用于存储该文章的评论内容。下面就让我们开始动手吧。。。<br></p>
+<ul>
+<li><p>第一步，注册 OAuth application  <a href="https://github.com/settings/applications/new" target="_blank" rel="noopener">传送门</a>  其中 <strong>Application name</strong> 可以自取；<strong>Homepage URL</strong> 需要填写博客的 URL 地址，如：<a href="https://yourName.github.io/；" target="_blank" rel="noopener">https://yourName.github.io/；</a> <strong>Application description</strong> Authorization callback URL 同样填写博客的 URL</p>
+</li>
+<li><p>第二步，获取 Client ID 和 Client Secret 进入 GitHub，依次点击头像 –&gt; Settings –&gt;  Developer settings  然后就可以看到刚刚创建的 OAuth Applcation 点击该App，在新的页面中就可以看到 Client ID 和 Client Secret，如下图：</p>
+</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/dockiHan/dockiHan.github.io/build/hexo/source/post_images/Build-Blog-2/pic_2.png" alt="图-2"></p>
+<ul>
+<li><p>第三步，修改 Next 配置文件<br>在 next 目录下的 _config.yml 文件中找到 gitalk 部分，做如下配置</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Gitalk</span></span><br><span class="line"><span class="comment"># Demo: https://gitalk.github.io</span></span><br><span class="line"><span class="comment"># Reference: https://asdfv1929.github.io/2018/01/20/gitalk/, https://liujunzhou.cn/2018/8/10/gitalk-error/#more</span></span><br><span class="line"><span class="attr">gitalk:</span></span><br><span class="line"><span class="attr">  enable:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  github_id:</span> <span class="string">dockiHan</span>  <span class="comment"># Github repo owner</span></span><br><span class="line"><span class="attr">  repo:</span> <span class="string">dockiHan.github.io</span>   <span class="comment"># Repository name to store issues.</span></span><br><span class="line"><span class="attr">  client_id:</span>   <span class="comment"># 第二步中的 Client ID</span></span><br><span class="line"><span class="attr">  client_secret:</span> <span class="comment">#第二步中的 Client Secret</span></span><br><span class="line"><span class="attr">  admin_user:</span>   <span class="comment"># 第二步创建Applicationd时用的GitHub 的 userName</span></span><br><span class="line"><span class="attr">  distraction_free_mode:</span> <span class="literal">true</span> <span class="comment"># Facebook-like distraction free mode</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>第四步，修改 <strong>layout/_partials/comments.swig</strong><br>添加以下内容</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% elseif theme.gitalk.enable %&#125;</span><br><span class="line">      &lt;div id=<span class="string">"gitalk-container"</span>&gt;&lt;/div&gt;</span><br><span class="line">      &lt;link rel=<span class="string">"stylesheet"</span> href=<span class="string">"https://unpkg.com/gitalk/dist/gitalk.css"</span>&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>第五步，在 <strong>layout/_third-party/comments/</strong>目录下增加文件<strong>gitalk.swig</strong> 已存在的不必再新建，检查一下文件内容是否一致<br>添加以下的内容</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&#123;% <span class="keyword">if</span> not (theme.duoshuo and theme.duoshuo.shortname) and not theme.duoshuo_shortname %&#125;</span><br><span class="line">  &#123;% <span class="keyword">if</span> theme.gitalk.enable %&#125;</span><br><span class="line">    &#123;% <span class="keyword">if</span> page.comments %&#125;</span><br><span class="line">      &lt;script src=<span class="string">"https://unpkg.com/gitalk/dist/gitalk.min.js"</span>&gt;&lt;/script&gt;</span><br><span class="line">      &lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">        <span class="keyword">const</span> gitalk = <span class="keyword">new</span> Gitalk(&#123;</span><br><span class="line">          clientID: <span class="string">'&#123;&#123;theme.gitalk.clientID&#125;&#125;'</span>,</span><br><span class="line">          clientSecret: <span class="string">'&#123;&#123;theme.gitalk.clientSecret&#125;&#125;'</span>,</span><br><span class="line">          repo: <span class="string">'&#123;&#123;theme.gitalk.repo&#125;&#125;'</span>,</span><br><span class="line">          owner: <span class="string">'&#123;&#123;theme.gitalk.owner&#125;&#125;'</span>,</span><br><span class="line">          admin: <span class="string">'&#123;&#123;theme.gitalk.admin&#125;&#125;'</span>.split(<span class="string">','</span>),</span><br><span class="line">          id: '&#123;&#123; page.date &#125;&#125;', #这个是基于文章时间创建 Issues ，默认是以文章标题作为标签创建 Issues 会导致长标题初始化失败。</span><br><span class="line">          pagerDirection: <span class="string">'&#123;&#123;theme.gitalk.pagerDirection&#125;&#125;'</span>,</span><br><span class="line">          <span class="comment">// facebook-like distraction free mode</span></span><br><span class="line">          distractionFreeMode: <span class="literal">false</span></span><br><span class="line">        &#125;)</span><br><span class="line">        gitalk.render(<span class="string">'gitalk-container'</span>)</span><br><span class="line">      &lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">    &#123;% endif %&#125;</span></span><br><span class="line"><span class="regexp">  &#123;% endif %&#125;</span></span><br><span class="line"><span class="regexp">&#123;% endif %&#125;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>第六步，打开 <strong>layout/_third-party/comments/index.swig</strong><br>添加以下内容</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% include <span class="string">'gitalk.swig'</span> %&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>第七步，将本地 build 分支的修改同步到远程分支<br>这里使用的 git 命令在上一篇文章中已经提到，不再赘述，还不会的小伙伴可学习google或百度 git 学习一下</p>
+</li>
+<li><p>第八步，发布部署最新版本</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo d -g</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>第九步，浏览器访问博客站点，在每篇文章最下方会有GitHub评论区，登录GitHub账号并初始化评论区</p>
+</li>
+</ul>
+<h3 id="使用-LeanCloud-实现文章阅读数计数功能"><a href="#使用-LeanCloud-实现文章阅读数计数功能" class="headerlink" title="使用 LeanCloud 实现文章阅读数计数功能"></a>使用 LeanCloud 实现文章阅读数计数功能</h3><ul>
+<li>第一步，去 <a href="https://leancloud.cn/" target="_blank" rel="noopener">LeanCloud</a> 注册账户并创建应用，如下图。注意勾选“开发版”否则就要付费了哟，应用名称可以随意取，图中的“blog” 就是我当时创建的应用。</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/dockiHan/dockiHan.github.io/build/hexo/source/post_images/Build-Blog-2/pic_3.png" alt="图-3"></p>
+<ul>
+<li>第二步，进入应用设置界面，新建一个新的 Class 用于计数。在设置界面先点击“存储”按钮，然后点击“创建 Class”按钮，就会出现下图所示的界面，Class 名称可以随意取（假设名为Count），注意权限设置时勾选最后一项“无限制”</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/dockiHan/dockiHan.github.io/build/hexo/source/post_images/Build-Blog-2/pic_4.png" alt="图-4"></p>
+<ul>
+<li>第三步，配置 next 主题的 _config.yml 文件。首先在 LeanCloud 应用设置页面点击“设置“ –&gt; “应用Key”获取该应用的 App ID 和 App Key，如下图：</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/dockiHan/dockiHan.github.io/build/hexo/source/post_images/Build-Blog-2/pic_5.png" alt="图-5"></p>
+<p>然后打开 next 目录下的 _config.yml 文件，找到 leancloud_visitors 属性做如下配置：<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">leancloud_visitors:</span></span><br><span class="line"><span class="attr">  enable:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  app_id:</span> <span class="string">这里填上图中的App</span> <span class="string">ID</span>  <span class="comment">#&lt;app_id&gt;</span></span><br><span class="line"><span class="attr">  app_key:</span> <span class="string">这里填上图中的App</span> <span class="string">Key</span>  <span class="comment">#&lt;app_key&gt;</span></span><br><span class="line">  <span class="comment"># Dependencies: https://github.com/theme-next/hexo-leancloud-counter-security</span></span><br><span class="line">  <span class="comment"># If you don't care about security in lc counter and just want to use it directly</span></span><br><span class="line">  <span class="comment"># (without hexo-leancloud-counter-security plugin), set the `security` to `false`.</span></span><br><span class="line"><span class="attr">  security:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">  betterPerformance:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>第四步，使用 Git 命令更新远端的 build 分支，然后使用 hexo 命令发布最新版本。</li>
+</ul>
+<h3 id="设置背景动画"><a href="#设置背景动画" class="headerlink" title="设置背景动画"></a>设置背景动画</h3><ul>
+<li><p>第一步，打开 next 主题配置文件中的 motion 属性</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Use velocity to animate everything.</span></span><br><span class="line"><span class="attr">motion:</span></span><br><span class="line"><span class="attr">  enable:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  async:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>第二步，打开 canvas_nest 动画效果</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Canvas-nest</span></span><br><span class="line"><span class="comment"># Dependencies: https://github.com/theme-next/theme-next-canvas-nest</span></span><br><span class="line"><span class="attr">canvas_nest:</span></span><br><span class="line"><span class="attr">  enable:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  onmobile:</span> <span class="literal">true</span> <span class="comment"># display on mobile or not</span></span><br><span class="line"><span class="attr">  color:</span> <span class="string">'0,0,0'</span> <span class="comment"># RGB values, use ',' to separate</span></span><br><span class="line"><span class="attr">  opacity:</span> <span class="number">0.65</span> <span class="comment"># the opacity of line: 0~1</span></span><br><span class="line"><span class="attr">  zIndex:</span> <span class="bullet">-1</span> <span class="comment"># z-index property of the background</span></span><br><span class="line"><span class="attr">  count:</span> <span class="number">99</span> <span class="comment"># the number of lines</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>第三步，安装依赖，<a href="https://github.com/theme-next/theme-next-canvas-nest" target="_blank" rel="noopener">https://github.com/theme-next/theme-next-canvas-nest</a></p>
+</li>
+</ul>
+<h3 id="修改页面透明度"><a href="#修改页面透明度" class="headerlink" title="修改页面透明度"></a>修改页面透明度</h3><p>由于 next 主题默认的背景是不透明的，如果我们设置的有 canvas_nest 和 canvas_three 等3D动画效果，则会被文章界面遮住，可以通过 CSS 样式来修改站点的页面透明度。</p>
+<ul>
+<li><p>文章部分<br><code>文件位置 ~Hexo根目录/themes/next/source/css/_schemes/Gemini/index.styl</code><br>（“ - ” 表示删除该行，或者注释掉该行， “ + ” 表示添加该行代码，0.7  表示透明度）</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Post &amp; Comments blocks.</span></span><br><span class="line">.post-block &#123;</span><br><span class="line">  padding: $content-desktop-padding;</span><br><span class="line">- background: white;</span><br><span class="line">+ background: rgba(<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">0.7</span>);</span><br><span class="line">  box-shadow: $box-shadow-inner;</span><br><span class="line">  border-radius: $border-radius-inner;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>阅读全文按钮<br><code>文件位置 ~Hexo根目录/themes/next/source/css/_variables/Pisces.styl</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Button</span></span><br><span class="line">  $btn-<span class="keyword">default</span>-radius           = <span class="number">2</span>px</span><br><span class="line">- $btn-<span class="keyword">default</span>-bg               = white</span><br><span class="line">+ $btn-<span class="keyword">default</span>-bg               = rgba(<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">0.5</span>)</span><br><span class="line">  $btn-<span class="keyword">default</span>-color            = $text-color</span><br><span class="line">  $btn-<span class="keyword">default</span>-border-color     = $text-color</span><br><span class="line">  $btn-<span class="keyword">default</span>-hover-color      = white</span><br><span class="line">  $btn-<span class="keyword">default</span>-hover-bg         = $black-deep</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>分页部分<br><code>文件位置 ~Hexo根目录/themes/next/source/css/_schemes/Gemini/index.styl</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Pagination.</span></span><br><span class="line">.pagination &#123;</span><br><span class="line">  .prev, .next, .page-number &#123;</span><br><span class="line">    margin-bottom: initial;</span><br><span class="line">    top: initial;</span><br><span class="line">  &#125;</span><br><span class="line">  margin: sboffset <span class="number">0</span> <span class="number">0</span>;</span><br><span class="line">- background: white;</span><br><span class="line">+ background: rgba(<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">0.7</span>);</span><br><span class="line">  box-shadow: $box-shadow;</span><br><span class="line">  border-radius: $border-radius;</span><br><span class="line">  padding: <span class="number">10</span>px <span class="number">0</span> <span class="number">10</span>px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>评论区部分<br><code>文件位置 ~Hexo根目录/themes/next/source/css/_schemes/Gemini/index.styl</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Comments blocks.</span></span><br><span class="line">.comments &#123;</span><br><span class="line">  padding: $content-desktop-padding;</span><br><span class="line">  margin: initial;</span><br><span class="line">  margin-top: sboffset;</span><br><span class="line">- background: white;</span><br><span class="line">+ background: rgba(<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">0.7</span>);</span><br><span class="line">  box-shadow: $box-shadow;</span><br><span class="line">  border-radius: $border-radius;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>侧栏菜单界面<br><code>文件位置 ~Hexo根目录/themes/next/source/css/_schemes/Pisces/_layout.styl</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">.header-inner &#123;</span><br><span class="line">  position: absolute;</span><br><span class="line">  top: <span class="number">0</span>;</span><br><span class="line">  overflow: hidden;</span><br><span class="line">  padding: <span class="number">0</span>;</span><br><span class="line">  width: $sidebar-desktop;</span><br><span class="line">- background: white;</span><br><span class="line">+ background: rgba(<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">0.7</span>);</span><br><span class="line">  box-shadow: $box-shadow-inner;</span><br><span class="line">  border-radius: $border-radius-inner;</span><br><span class="line"></span><br><span class="line">  +desktop-large() &#123;</span><br><span class="line">    .container &amp; &#123; <span class="attr">width</span>: $sidebar-desktop; &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  +tablet() &#123;</span><br><span class="line">    position: relative;</span><br><span class="line">    width: auto;</span><br><span class="line">    border-radius: initial;</span><br><span class="line">  &#125;</span><br><span class="line">  +mobile() &#123;</span><br><span class="line">    position: relative;</span><br><span class="line">    width: auto;</span><br><span class="line">    border-radius: initial;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>个人资料界面<br><code>文件位置 ~Hexo根目录/themes/next/source/css/_schemes/Pisces/_sidebar.styl</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">.sidebar-inner &#123;</span><br><span class="line"><span class="comment">//padding: 20px 10px 0;</span></span><br><span class="line">  box-sizing: border-box;</span><br><span class="line">  width: $sidebar-desktop;</span><br><span class="line">  color: $text-color;</span><br><span class="line">- background: white;</span><br><span class="line">+ background: rgba(<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">0.7</span>);</span><br><span class="line">  box-shadow: $box-shadow;</span><br><span class="line">  border-radius: $border-radius;</span><br><span class="line">  <span class="keyword">if</span> (hexo-config(<span class="string">'motion.enable'</span>) and hexo-config(<span class="string">'motion.transition.sidebar'</span>)) &#123; <span class="attr">opacity</span>: <span class="number">0</span>; &#125;</span><br><span class="line"></span><br><span class="line">  &amp;.affix &#123;</span><br><span class="line">    position: fixed;</span><br><span class="line">    top: $sidebar-offset;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>特别感谢 <a href="https://liujunzhou.top/2018/8/16/page-background/" target="_blank" rel="noopener">https://liujunzhou.top/2018/8/16/page-background/</a> 前辈的总结</p>
+<h3 id="开启-fancybox-实现文章图片的放大功能"><a href="#开启-fancybox-实现文章图片的放大功能" class="headerlink" title="开启 fancybox 实现文章图片的放大功能"></a>开启 fancybox 实现文章图片的放大功能</h3><ul>
+<li><p>第一步，进入 next 主题的配置文件，开启 fancybox 配置</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Fancybox. There is support for old version 2 and new version 3.</span></span><br><span class="line"><span class="comment"># Please, choose only any one variant, do not need to install both.</span></span><br><span class="line"><span class="comment"># For install 2.x: https://github.com/theme-next/theme-next-fancybox</span></span><br><span class="line"><span class="comment"># For install 3.x: https://github.com/theme-next/theme-next-fancybox3</span></span><br><span class="line"><span class="attr">fancybox:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>第二步，在配置文件中配置 jquery 和 fancybox 依赖的 js 和 css</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Script Vendors.</span></span><br><span class="line"><span class="comment"># Set a CDN address for the vendor you want to customize.</span></span><br><span class="line"><span class="comment"># For example</span></span><br><span class="line"><span class="comment">#    jquery: https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js</span></span><br><span class="line"><span class="comment"># Be aware that you should use the same version as internal ones to avoid potential problems.</span></span><br><span class="line"><span class="comment"># Please use the https protocol of CDN files when you enable https on your site.</span></span><br><span class="line"><span class="attr">vendors:</span></span><br><span class="line">  <span class="comment"># Internal path prefix. Please do not edit it.</span></span><br><span class="line"><span class="attr">  _internal:</span> <span class="string">lib</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># Internal version: 2.1.3</span></span><br><span class="line">  <span class="comment"># Example:</span></span><br><span class="line">  <span class="comment"># jquery: //cdn.jsdelivr.net/npm/jquery@2.1.3/dist/jquery.min.js</span></span><br><span class="line">  <span class="comment"># jquery: //cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js</span></span><br><span class="line"><span class="attr">  jquery:</span> <span class="string">//cdn.jsdelivr.net/npm/jquery@2.1.3/dist/jquery.min.js</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># Internal version: 2.1.5</span></span><br><span class="line">  <span class="comment"># See: http://fancyapps.com/fancybox</span></span><br><span class="line">  <span class="comment"># Example:</span></span><br><span class="line">  <span class="comment"># fancybox: //cdn.jsdelivr.net/npm/fancybox@3.0.0/dist/js/jquery.fancybox.pack.js</span></span><br><span class="line">  <span class="comment"># fancybox_css: //cdn.jsdelivr.net/npm/fancybox@3.0.0/dist/css/jquery.fancybox.min.css</span></span><br><span class="line">  <span class="comment"># fancybox: //cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js</span></span><br><span class="line">  <span class="comment"># fancybox_css: //cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css</span></span><br><span class="line"><span class="attr">  fancybox:</span> <span class="string">//cdn.jsdelivr.net/npm/fancybox@3.0.0/dist/js/jquery.fancybox.pack.js</span></span><br><span class="line"><span class="attr">  fancybox_css:</span> <span class="string">//cdn.jsdelivr.net/npm/fancybox@3.0.0/dist/css/jquery.fancybox.min.css</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>第三步，安装 fancybox 依赖，根据配置文件你选择的 fancybox 版本去对应的 github 安装依赖。<br><br>For install 2.x: <a href="https://github.com/theme-next/theme-next-fancybox" target="_blank" rel="noopener">https://github.com/theme-next/theme-next-fancybox</a> <br><br>For install 3.x: <a href="https://github.com/theme-next/theme-next-fancybox3" target="_blank" rel="noopener">https://github.com/theme-next/theme-next-fancybox3</a> <br><br>个人建议使用3.x，我在搭建站点时就是选择的3.x版本</p>
+</li>
+<li>第四步，使用 Git 命令更新 build 分支，然后使用 hexo 命令发布最新版本</li>
+</ul>
+<p>本人在搭建站点时所做的个性化配置就是这么多啦，个人认为基本满足了美观+实用的需求。最终的效果可见：<a href="https://dockihan.github.io/">https://dockihan.github.io/</a>   有任何问题欢迎来评论区讨论哟～ 预祝大家成功搭建起自己的博客站点！～</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+      <div>
+        
+
+
+
+  
+
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>docki</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    
+    <a href="https://dockiHan.github.io/2019/01/06/Build-Blog-2/" title="使用GitHub Pages 与 Hexo 搭建个人博客站点（二）">https://dockiHan.github.io/2019/01/06/Build-Blog-2/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Hexo/" rel="tag"># Hexo</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/27/Build-Blog-1/" rel="next" title="使用GitHub Pages 与 Hexo 搭建个人博客站点（一）">
+                <i class="fa fa-chevron-left"></i> 使用GitHub Pages 与 Hexo 搭建个人博客站点（一）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/07/11/hello-world/" rel="prev" title="Hello World">
+                Hello World <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div id="gitalk-container">
+    </div>
+    
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/font_logo.png" alt="docki">
+            
+              <p class="site-author-name" itemprop="name">docki</p>
+              <p class="site-description motion-element" itemprop="description">走在求知的路上</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/dockihan" title="GitHub &rarr; https://github.com/dockihan" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="/dockihan@gmail.com" title="E-Mail &rarr; dockihan@gmail.com"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#使用GitHub-Pages-与-Hexo-搭建个人博客站点（二）"><span class="nav-number">1.</span> <span class="nav-text">使用GitHub Pages 与 Hexo 搭建个人博客站点（二）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.1.</span> <span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#开启版权声明"><span class="nav-number">1.1.1.</span> <span class="nav-text">开启版权声明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用-GitTalk-实现评论功能"><span class="nav-number">1.1.2.</span> <span class="nav-text">使用 GitTalk 实现评论功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用-LeanCloud-实现文章阅读数计数功能"><span class="nav-number">1.1.3.</span> <span class="nav-text">使用 LeanCloud 实现文章阅读数计数功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置背景动画"><span class="nav-number">1.1.4.</span> <span class="nav-text">设置背景动画</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改页面透明度"><span class="nav-number">1.1.5.</span> <span class="nav-text">修改页面透明度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开启-fancybox-实现文章图片的放大功能"><span class="nav-number">1.1.6.</span> <span class="nav-text">开启 fancybox 实现文章图片的放大功能</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 – <span itemprop="copyrightYear">2020</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">docki</span>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+    
+    
+  
+  <script color="0,0,0" opacity="0.65" zindex="-1" count="99" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script src="//cdn.jsdelivr.net/npm/jquery@2.1.3/dist/jquery.min.js"></script>
+  
+
+  
+  
+    <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script src="//cdn.jsdelivr.net/npm/fancybox@3.0.0/dist/js/jquery.fancybox.pack.js"></script>
+  
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=6.6.0"></script>
+
+  <script src="/js/src/motion.js?v=6.6.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/src/affix.js?v=6.6.0"></script>
+
+  <script src="/js/src/schemes/pisces.js?v=6.6.0"></script>
+
+
+
+  
+  <script src="/js/src/scrollspy.js?v=6.6.0"></script>
+<script src="/js/src/post-details.js?v=6.6.0"></script>
+
+
+
+  
+
+
+  <script src="/js/src/bootstrap.js?v=6.6.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <script src="//cdn.jsdelivr.net/npm/gitalk@1.4.0/dist/gitalk.min.js"></script>
+
+  
+  
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1.4.0/dist/gitalk.css">
+
+  
+  
+  <script src="//cdn.jsdelivr.net/npm/js-md5@0.7.3/src/md5.min.js"></script>
+
+   <script>
+        var gitalk = new Gitalk({
+          clientID: '3305a7ee6df2953b41c1',
+          clientSecret: 'e2e73865f599afdbf6ebe071c7fae06e02b58186',
+          repo: 'dockiHan.github.io',
+          owner: 'dockiHan',
+          admin: ['dockiHan'],
+          id: md5(location.pathname),
+          distractionFreeMode: 'true'
+        })
+        gitalk.render('gitalk-container')
+       </script>
+
+
+  
+
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script>
+    
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+
+      Counter('get', '/classes/Counter', { where: JSON.stringify({ url }) })
+        .done(function ({ results }) {
+          if (results.length > 0) {
+            var counter = results[0];
+            
+            Counter('put', `/classes/Counter/${counter.objectId}`, JSON.stringify({ time: { "__op":"Increment", "amount":1 } }))
+            
+            .done(function () {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(counter.time + 1);
+            })
+            
+            .fail(function ({ responseJSON }) {
+                console.log('Failed to save Visitor num, with error message: ' + responseJSON.error);
+            })
+          } else {
+            
+              Counter('post', '/classes/Counter', JSON.stringify({ title: title, url: url, time: 1}))
+                .done(function () {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(1);
+                })
+                .fail(function () {
+                  console.log('Failed to create');
+                });
+            
+          }
+        })
+      .fail(function ({ responseJSON }) {
+        console.log('LeanCloud Counter Error:' + responseJSON.code + " " + responseJSON.error);
+      });
+    }
+    
+
+    $(function() {
+      $.get('https://app-router.leancloud.cn/2/route?appId=' + "2c4O5L2cbNv8MxSauWi6M2Tf-gzGzoHsz")
+        .done(function ({ api_server }) {
+          var Counter = function (method, url, data) {
+            return $.ajax({
+              method: method,
+              url: `https://${api_server}/1.1${url}`,
+              headers: {
+                'X-LC-Id': "2c4O5L2cbNv8MxSauWi6M2Tf-gzGzoHsz",
+                'X-LC-Key': "onlFi1K3BGb2tsMtymXtO314",
+                'Content-Type': 'application/json',
+              },
+              data: data,
+            });
+          };
+          
+          addCount(Counter);
+          
+        })
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
