@@ -68,7 +68,7 @@ footer:
     # `heart` is recommended with animation in red (#ff0000).
     name: heart
     # If you want to animate the icon, set it to true.
-    animated: false
+    animated: true
     # Change the color of icon, using Hex Code.
     color: "#808080"
 
@@ -90,9 +90,10 @@ footer:
   # Beian icp information for Chinese users. In China, every legal website should have a beian icp in website footer.
   # http://www.miitbeian.gov.cn
   beian:
+    enable: true
+    icp: 沪ICP备20020302号
+  gongan:
     enable: false
-    icp:
-
   # -------------------------------------------------------------
   # Any custom text can be defined here.
   #custom_text: Hosted by <a href="https://pages.coding.me" class="theme-link" rel="noopener" target="_blank">Coding Pages</a>

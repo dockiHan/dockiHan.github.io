@@ -313,10 +313,10 @@ For install 3.x: https://github.com/theme-next/theme-next-fancybox3 <br>
 本人在搭建站点时所做的个性化配置就是这么多啦，个人认为基本满足了美观+实用的需求。最终的效果可见：https://dockihan.github.io/   有任何问题欢迎来评论区讨论哟～ 预祝大家成功搭建起自己的博客站点！～
 
   [1]: https://www.zybuluo.com/mdeditor#1377137-full-reader
-  [2]: https://raw.githubusercontent.com/dockiHan/dockiHan.github.io/build/hexo/source/post_images/Build-Blog-2/pic_1.png
+  [2]: /post_images/Build-Blog-2/pic_1.png
   [3]: https://github.com/settings/applications/new
-  [4]: https://raw.githubusercontent.com/dockiHan/dockiHan.github.io/build/hexo/source/post_images/Build-Blog-2/pic_2.png
+  [4]: /post_images/Build-Blog-2/pic_2.png
   [5]: https://leancloud.cn/
-  [6]: https://raw.githubusercontent.com/dockiHan/dockiHan.github.io/build/hexo/source/post_images/Build-Blog-2/pic_3.png
-  [7]: https://raw.githubusercontent.com/dockiHan/dockiHan.github.io/build/hexo/source/post_images/Build-Blog-2/pic_4.png
-  [8]: https://raw.githubusercontent.com/dockiHan/dockiHan.github.io/build/hexo/source/post_images/Build-Blog-2/pic_5.png
+  [6]: /post_images/Build-Blog-2/pic_3.png
+  [7]: /post_images/Build-Blog-2/pic_4.png
+  [8]: /post_images/Build-Blog-2/pic_5.png

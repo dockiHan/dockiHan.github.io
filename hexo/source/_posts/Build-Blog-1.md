@@ -351,14 +351,14 @@ git push    //将commit同步到远程仓库
 
 到此为止，一个看得过去的博客站点就算初步建立了，基本可以满足喜欢写写东西记录生活、写写笔记记录学习经历的同学了。。如果还想做一些个性化的修改可以期待下一篇文章使用**GitHub Pages 与 Hexo 搭建个人博客站点（二）**
 
-  [1]: https://raw.githubusercontent.com/dockiHan/dockiHan.github.io/build/hexo/source/post_images/Build-Blog-1/pic_1.png
-  [2]: https://raw.githubusercontent.com/dockiHan/dockiHan.github.io/build/hexo/source/post_images/Build-Blog-1/pic_5.png
-  [3]: https://raw.githubusercontent.com/dockiHan/dockiHan.github.io/build/hexo/source/post_images/Build-Blog-1/pic_2.png
-  [4]: https://raw.githubusercontent.com/dockiHan/dockiHan.github.io/build/hexo/source/post_images/Build-Blog-1/pic_4.png
-  [5]: https://raw.githubusercontent.com/dockiHan/dockiHan.github.io/build/hexo/source/post_images/Build-Blog-1/pic_3.png
+  [1]: /post_images/Build-Blog-1/pic_1.png
+  [2]: /post_images/Build-Blog-1/pic_5.png
+  [3]: /post_images/Build-Blog-1/pic_2.png
+  [4]: /post_images/Build-Blog-1/pic_4.png
+  [5]: /post_images/Build-Blog-1/pic_3.png
   [6]: https://nodejs.org/zh-cn/
   [7]: https://mp.weixin.qq.com/s?__biz=MzU5MTE0ODcwNQ==&mid=2247484100&idx=1&sn=5051ed4c889747259fa00765a1286f62&chksm=fe32210ac945a81c2ce6e8dbaefebc1f44fbde6de3642fe1d61e2e61d292ffa32277dae5528d#rd
   [8]: https://zhuanlan.zhihu.com/p/35668237
   [9]: https://github.com/iissnan/hexo-theme-next
-  [10]: https://raw.githubusercontent.com/dockiHan/dockiHan.github.io/build/hexo/source/post_images/Build-Blog-1/pic_6.png
-  [11]: https://raw.githubusercontent.com/dockiHan/dockiHan.github.io/build/hexo/source/post_images/Build-Blog-1/pic_7.png
+  [10]: /post_images/Build-Blog-1/pic_6.png
+  [11]: /post_images/Build-Blog-1/pic_7.png

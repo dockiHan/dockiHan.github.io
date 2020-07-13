@@ -1,8 +1,5 @@
 <div class="copyright">{#
 #}{% set current = date(Date.now(), "YYYY") %}{#
-#}{% if theme.footer.beian.enable %}{#
-#}  {{ next_url('http://www.miitbeian.gov.cn', theme.footer.beian.icp + ' ') }}{#
-#}{% endif %}{#
 #}&copy; {% if theme.footer.since and theme.footer.since != current %}{{ theme.footer.since }} – {% endif %}{#
 #}<span itemprop="copyrightYear">{{ current }}</span>
   <span class="with-love" id="animate">
@@ -60,3 +57,12 @@
   #}{{ theme.footer.custom_text }}{#
 #}</div>
 {% endif %}
+
+<div style="display:inline-block">
+{% if theme.footer.beian.enable %}{#
+  #}<span style="padding-left:25px;background:url(/images/backupIcon.png) no-repeat left center" rel="nofollow">
+  {{ next_url('http://www.beian.miit.gov.cn/', theme.footer.beian.icp ) }} </span> {#
+#}{% endif %}
+</div>
+
+
